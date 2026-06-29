@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: "64px" }}> {/* offset for fixed navbar */}
+      <main style={{ paddingTop: "64px" }}> {/* offset for fixed navbar, responsive via media queries */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<SelectedWorks />} />

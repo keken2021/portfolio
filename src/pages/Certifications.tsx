@@ -52,7 +52,7 @@ const certs = [
     subtitle: "Fundamentals",
     link: "https://www.udemy.com/certificate/UC-ed2a9217-d1f7-4220-bec0-8c7df567f8f3/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com",
   },
- {
+  {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
@@ -62,7 +62,7 @@ const certs = [
     subtitle: "Data Analytics Philippines",
     link: "https://drive.google.com/file/d/1TRd5RUwVDYieBwkESaz0kuzxDF0gAd49/view?usp=sharing",
   },
-   {
+  {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
@@ -81,31 +81,31 @@ export function Certifications() {
   const visibleCerts = isExpanded ? certs : certs.slice(0, previewCount);
 
   return (
-    <section style={{ width: "100%" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+    <section style={{ width: "100%", padding: "0 16px" }} className="sm:px-0">
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 8px" }} className="sm:px-0">
 
         {/* Header */}
-        <div className="mb-10 mt-25">
+        <div className="mb-6 sm:mb-10 mt-12 sm:mt-25 px-4 sm:px-0">
           <h2
-            className="text-white font-semibold text-3xl tracking-tight mb-2"
+            className="text-white font-semibold text-2xl sm:text-3xl tracking-tight mb-2"
             style={{ fontFamily: "Geist, -apple-system, sans-serif" }}
           >
             Certificates and Activities
           </h2>
-          <p className="text-[#C4C7C8] text-sm" style={{ fontFamily: "Geist, -apple-system, sans-serif" }}>
+          <p className="text-[#C4C7C8] text-xs sm:text-sm" style={{ fontFamily: "Geist, -apple-system, sans-serif" }}>
             Validated expertise in design and development.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 px-4 sm:px-0">
           {visibleCerts.map((cert, index) => (
             <a
               key={`${cert.name}-${index}`}
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 rounded-2xl p-5 border border-white/10 bg-transparent hover:border-white/25 hover:bg-white/5 transition-all duration-200 no-underline"
+              className="group flex items-center sm:items-start sm:flex-col gap-3 sm:gap-4 rounded-lg sm:rounded-2xl p-3 sm:p-5 border border-white/10 bg-transparent hover:border-white/25 hover:bg-white/5 transition-all duration-200 no-underline"
               style={{ fontFamily: "Geist, -apple-system, sans-serif" }}
             >
               {/* Icon */}
@@ -115,10 +115,10 @@ export function Certifications() {
 
               {/* Text */}
               <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-                <p className="text-white text-[14px] font-medium leading-snug truncate">
+                <p className="text-white text-xs sm:text-[14px] font-medium leading-snug truncate">
                   {cert.name}
                 </p>
-                <p className="text-[#C4C7C8] text-[12px] font-normal leading-snug truncate">
+                <p className="text-[#C4C7C8] text-[11px] sm:text-[12px] font-normal leading-snug truncate">
                   {cert.subtitle}
                 </p>
               </div>
@@ -126,19 +126,19 @@ export function Certifications() {
               {/* Link indicator */}
               <ExternalLink
                 size={14}
-                className="text-white/30 group-hover:text-white/70 transition-colors shrink-0"
+                className="text-white/30 group-hover:text-white/70 transition-colors shrink-0 hidden sm:block"
               />
             </a>
           ))}
         </div>
 
         {certs.length > previewCount && (
-          <div className="mt-5 flex justify-center">
+          <div className="mt-4 sm:mt-5 flex justify-center px-4 sm:px-0">
             <button
               type="button"
               onClick={() => setIsExpanded((prev) => !prev)}
               aria-expanded={isExpanded}
-              className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/10"
+              className="rounded-full border border-white/15 bg-white/5 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/10"
             >
               {isExpanded ? "See less" : "See more"}
             </button>
