@@ -81,64 +81,42 @@ export function Certifications() {
   const visibleCerts = isExpanded ? certs : certs.slice(0, previewCount);
 
   return (
-    <section style={{ width: "100%", padding: "0 16px" }} className="sm:px-0">
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 8px" }} className="sm:px-0">
+    <section className="certs-section">
+      <div className="certs-container">
 
         {/* Header */}
-        <div className="mb-6 sm:mb-10 mt-12 sm:mt-25 px-4 sm:px-0">
-          <h2
-            className="text-white font-semibold text-2xl sm:text-3xl tracking-tight mb-2"
-            style={{ fontFamily: "Geist, -apple-system, sans-serif" }}
-          >
-            Certificates and Activities
-          </h2>
-          <p className="text-[#C4C7C8] text-xs sm:text-sm" style={{ fontFamily: "Geist, -apple-system, sans-serif" }}>
-            Validated expertise in design and development.
-          </p>
+        <div className="certs-header">
+          <h2 className="certs-title">Certificates and Activities</h2>
+          <p className="certs-subtitle">Validated expertise in design and development.</p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 px-4 sm:px-0">
+        <div className="certs-grid">
           {visibleCerts.map((cert, index) => (
             <a
               key={`${cert.name}-${index}`}
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center sm:items-start sm:flex-col gap-3 sm:gap-4 rounded-lg sm:rounded-2xl p-3 sm:p-5 border border-white/10 bg-transparent hover:border-white/25 hover:bg-white/5 transition-all duration-200 no-underline"
-              style={{ fontFamily: "Geist, -apple-system, sans-serif" }}
+              className="cert-card"
             >
-              {/* Icon */}
-              <span className="text-white shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
-                {cert.icon}
-              </span>
-
-              {/* Text */}
-              <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-                <p className="text-white text-xs sm:text-[14px] font-medium leading-snug truncate">
-                  {cert.name}
-                </p>
-                <p className="text-[#C4C7C8] text-[11px] sm:text-[12px] font-normal leading-snug truncate">
-                  {cert.subtitle}
-                </p>
+              <span className="cert-card-icon">{cert.icon}</span>
+              <div className="cert-card-body">
+                <h3 className="cert-card-name">{cert.name}</h3>
+                <p className="cert-card-subtitle">{cert.subtitle}</p>
               </div>
-
-              {/* Link indicator */}
-              <ExternalLink
-                size={14}
-                className="text-white/30 group-hover:text-white/70 transition-colors shrink-0 hidden sm:block"
-              />
+              <ExternalLink size={13} className="cert-card-link-icon" />
             </a>
           ))}
         </div>
 
         {certs.length > previewCount && (
-          <div className="mt-4 sm:mt-5 flex justify-center px-4 sm:px-0">
+          <div className="certs-toggle-wrapper">
             <button
               type="button"
               onClick={() => setIsExpanded((prev) => !prev)}
               aria-expanded={isExpanded}
-              className="rounded-full border border-white/15 bg-white/5 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/10"
+              className="certs-toggle-btn"
             >
               {isExpanded ? "See less" : "See more"}
             </button>
