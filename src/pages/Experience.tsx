@@ -1,10 +1,10 @@
 const journeyItems = [
   {
     period: "Jan 2026 - June 2026",
-    role: "Software Developer Intern",
+    role: "IT Intern",
     company: "Ray Business Technologies",
     description:
-      "Spearheading modern application development using .NET and React stacks, focusing on enterprise-scale solutions and cloud integration.",
+      "Spearheading modern application development using .NET and React stacks, focusing on enterprise-scale solutions.",
     isCurrent: true,
   },
   {
@@ -12,7 +12,7 @@ const journeyItems = [
     role: "Full Stack Projects & Development",
     company: "Independent/Enterprise Collaborations",
     description:
-      "Designed and delivered high-impact systems like Ciudad App and Fabric Transformer, focusing on efficiency and user satisfaction.",
+      "Designed and delivered high-impact systems like Ciudad App and other side projects, focusing on efficiency and user satisfaction.",
     isCurrent: false,
   },
   {
